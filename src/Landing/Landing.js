@@ -112,7 +112,7 @@ class Landing extends Component {
      this.setState({
         showAlert:true
      })
-                    window.location.reload()
+                  //  window.location.reload()
                
                 })
                 }
@@ -212,9 +212,9 @@ class Landing extends Component {
                             </div>
 
 
-                            <div className='col-12' style={{justifyContent: 'center', display: 'flex', alignItems: 'center'}}>
-                            <label for="files" className='ifile1'>{i18n.t('Landing.select')}</label>
-                                                            <input  className='ifile' type="file" id="file" onChange={(e) => this.onChange(e)} ></input>
+                            <div className='col-12' style={{justifyContent: 'center', display: 'flex', alignItems: 'center', paddingTop:'20px'}}>
+                           
+                                                            <input   type="file" id="file" onChange={(e) => this.onChange(e)} ></input>
 
                                                       
 
