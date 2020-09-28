@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Landing.css';
-import { Button, Modal, Navbar, Nav, Carousel,Alert } from 'react-bootstrap';
+import { Button, Modal, Navbar, Nav, Carousel, Alert } from 'react-bootstrap';
 import i18n from '../i18n'
 import Logo from '../photo/Logo.png'
 import $ from 'jquery';
@@ -9,10 +9,30 @@ import HomePhoto from '../photo/01.png'
 import Web from '../photo/WebDevelop.png'
 import Phone from '../photo/AppDevelop.png'
 import Ui from '../photo/UiDesign.png'
-import tickup from '../photo/Tikup.png'
-import Movafagh from '../photo/Movafaghiat.png'
-import Pentago from '../photo/222.png'
-import Cookland from '../photo/Cookland.png'
+import tickup1 from '../photo/Tickup/1.png'
+import tickup2 from '../photo/Tickup/2.png'
+import tickup3 from '../photo/Tickup/3.png'
+import tickup4 from '../photo/Tickup/4.png'
+import Movafagh1 from '../photo/Movafaghiat/1.png'
+import Movafagh2 from '../photo/Movafaghiat/2.png'
+import Movafagh3 from '../photo/Movafaghiat/3.png'
+import Movafagh4 from '../photo/Movafaghiat/4.png'
+import Pentago1 from '../photo/Pentago/3.png'
+import Pentago2 from '../photo/Pentago/1.png'
+import Pentago3 from '../photo/Pentago/2.png'
+import Pentago4 from '../photo/Pentago/4.png'
+import Cookland1 from '../photo/Cookland/1.png'
+import Cookland2 from '../photo/Cookland/2.png'
+import Cookland3 from '../photo/Cookland/3.png'
+import Cookland4 from '../photo/Cookland/4.png'
+import Woid1 from '../photo/Woid/9.png'
+import Woid2 from '../photo/Woid/10.png'
+import Woid3 from '../photo/Woid/11.png'
+import Woid4 from '../photo/Woid/12.png'
+import Rabt1 from '../photo/Rabt/5.png'
+import Rabt2 from '../photo/Rabt/6.png'
+import Rabt3 from '../photo/Rabt/7.png'
+import Rabt4 from '../photo/Rabt/8.png'
 import Join_right from '../photo/02.png'
 import Join_left from '../photo/03.png'
 import Call from '../photo/phone1.png'
@@ -56,7 +76,7 @@ class Landing extends Component {
             phone_number: '',
             des: '',
             file: '',
-            showAlert:false
+            showAlert: false
         }
     }
 
@@ -92,8 +112,8 @@ class Landing extends Component {
         })
 
     }
-    resume=()=>{
-   
+    resume = () => {
+
         var myHeaders = new Headers();
         var formdata = new FormData();
         formdata.append("number", this.state.phone_number);
@@ -106,34 +126,34 @@ class Landing extends Component {
 
         };
         fetch("http://127.0.0.1:8000/submit/", requestOptions)
-            .then(response =>{
-                if(response.status===201){
- response.json().then(rep => {
-     this.setState({
-        showAlert:true
-     })
-                  //  window.location.reload()
-               
-                })
+            .then(response => {
+                if (response.status === 201) {
+                    response.json().then(rep => {
+                        this.setState({
+                            showAlert: true
+                        })
+                        //  window.location.reload()
+
+                    })
                 }
             }
-                
-               
+
+
             )
 
             .catch(error => console.log('error', error));
     }
-    close=()=>{
+    close = () => {
         this.setState({
-            showAlert:false
+            showAlert: false
         })
     }
     render() {
         return (
 
             < div style={{ width: '100%' }}>
-                <Alert show={this.state.showAlert} onClose={this.close} variant="success" style={{position:'fixed'}} dismissible>
-                {i18n.t('Landing.SendSuccess')}
+                <Alert show={this.state.showAlert} onClose={this.close} variant="success" style={{ position: 'fixed' }} dismissible>
+                    {i18n.t('Landing.SendSuccess')}
                 </Alert>
                 <Navbar expand="lg" >
                     <Navbar.Brand >
@@ -176,53 +196,53 @@ class Landing extends Component {
 
 
                             <div className='col-12' >
-                                <div className='row' style={{ display: 'flex', flexDirection: 'row', paddingTop:'30px', justifyContent:'center', alignItems:'center' }}>
-                                    <div className='col-md-4 col-sm-12' style={{display:'flex', justifyContent:'center',alignItems:'center'}}>
-  <h6 >
-                                    {i18n.t('Landing.num')}
-                                </h6>
+                                <div className='row' style={{ display: 'flex', flexDirection: 'row', paddingTop: '30px', justifyContent: 'center', alignItems: 'center' }}>
+                                    <div className='col-md-4 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <h6 >
+                                            {i18n.t('Landing.num')}
+                                        </h6>
                                     </div>
-                         <div className='col-md-4 col-sm-12' style={{display:'flex', justifyContent:'center',alignItems:'center'}}>
-                                <input onChange={this.changetext} autoComplete='off' name='num' className='inputAdd'></input>
+                                    <div className='col-md-4 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <input onChange={this.changetext} autoComplete='off' name='num' className='inputAdd'></input>
 
-                         </div>
-                             
+                                    </div>
+
                                 </div>
-     
+
 
                             </div>
 
 
                             <div className='col-12' >
-                            <div className='row' style={{ display: 'flex', flexDirection: 'row', paddingTop:'30px', justifyContent:'center', alignItems:'center' }}>
-                                    <div className='col-md-4 col-sm-12' style={{display:'flex', justifyContent:'center',alignItems:'center'}}>
- 
-                                    <h6 >
-                                    {i18n.t('Landing.des')}
-                                </h6>
-                                    </div>
-                         <div className='col-md-4 col-sm-12' style={{display:'flex', justifyContent:'center',alignItems:'center'}}>
-                         <textarea onChange={this.changetext} autoComplete='off' name='des' className='inputAdd1'></textarea>
+                                <div className='row' style={{ display: 'flex', flexDirection: 'row', paddingTop: '30px', justifyContent: 'center', alignItems: 'center' }}>
+                                    <div className='col-md-4 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-                         </div>
-                             
+                                        <h6 >
+                                            {i18n.t('Landing.des')}
+                                        </h6>
+                                    </div>
+                                    <div className='col-md-4 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <textarea onChange={this.changetext} autoComplete='off' name='des' className='inputAdd1'></textarea>
+
+                                    </div>
+
                                 </div>
 
-                               
+
                             </div>
 
 
-                            <div className='col-12' style={{justifyContent: 'center', display: 'flex', alignItems: 'center', paddingTop:'20px'}}>
-                           
-                                                            <input   type="file" id="file" onChange={(e) => this.onChange(e)} ></input>
+                            <div className='col-12' style={{ justifyContent: 'center', display: 'flex', alignItems: 'center', paddingTop: '20px' }}>
 
-                                                      
+                                <input type="file" id="file" onChange={(e) => this.onChange(e)} ></input>
+
+
 
                             </div>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button style={{marginRight:'20px'}} onClick={this.resume}>Submit</Button>
+                        <Button style={{ marginRight: '20px' }} onClick={this.resume}>Submit</Button>
                     </Modal.Footer>
                 </Modal>
                 <div id='home_page' className='row' style={{ paddingTop: '30px' }}>
@@ -246,7 +266,7 @@ class Landing extends Component {
                                 {i18n.t('Landing.txtHome5')}
                             </div>
                             <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <img className=' col-s-12' style={{ width: '450px' }} src={HomePhoto}></img>
+                                <img alt='' className=' col-s-12' style={{ width: '450px' }} src={HomePhoto}></img>
                             </div>
                         </div>
                     </div>
@@ -264,7 +284,7 @@ class Landing extends Component {
                             <div className='col-md-2'></div>
                             <div className='col-sm-12 col-md-3' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center", paddingTop: '30px' }}>
                                 <div className='card'  >
-                                    <img src={Ui} style={{ width: '90px', paddingBottom: '40px' }}></img>
+                                    <img alt='' src={Ui} style={{ width: '90px', paddingBottom: '40px' }}></img>
                                     <h6>   {i18n.t('Landing.uitext')}</h6>
                                     <h7 style={{ fontSize: '13px' }}>ddddddd</h7>
                                 </div>
@@ -272,14 +292,14 @@ class Landing extends Component {
                             </div>
                             <div className='col-sm-12 col-md-3' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center", paddingTop: '30px' }}>
                                 <div className='card'  >
-                                    <img src={Phone} style={{ width: '90px', paddingBottom: '40px' }}></img>
+                                    <img alt='' src={Phone} style={{ width: '90px', paddingBottom: '40px' }}></img>
                                     <h6>   {i18n.t('Landing.apptext')}</h6>
                                     <h7 style={{ fontSize: '13px' }}>ddddddd</h7>
                                 </div></div>
                             <div className='col-sm-12 col-md-3' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center", paddingTop: '30px' }}>
 
                                 <div className='card'  >
-                                    <img src={Web} style={{ width: '90px', paddingBottom: '40px' }}></img>
+                                    <img alt='' src={Web} style={{ width: '90px', paddingBottom: '40px' }}></img>
                                     <h6>   {i18n.t('Landing.webtext')}</h6>
                                     <h7 style={{ fontSize: '13px' }}>ddddddd</h7>
                                 </div>
@@ -295,29 +315,29 @@ class Landing extends Component {
                     </div>
                     <div className='col-12'>
                         <div className='row'>
-                        
+
                             <div className='col-12' >
                                 <Carousel indicators={false} interval='3000' style={{ paddingTop: '10px', height: '100px', color: 'black' }}>
                                     <Carousel.Item>
 
-                                        <div className='col-12' style={{ marginLeft: '80px', display:"flex",flexDirection:'row'}}>
-                                            <img src={tickup} style={{ width: '200px' }}></img>
-                                            <div style={{display:'flex', flexDirection:'column' , paddingLeft:'20px', paddingTop:'80px'}}>
+                                        <div className='col-12' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
+                                            <img alt='' src={tickup1} style={{ width: '200px' }}></img>
+                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
                                                 <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
 
                                             </div>
-                                            <img src={tickup} style={{ width: '180px', height:'400px', marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={tickup} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={tickup} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
+                                            <img alt='' src={tickup2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt='' src={tickup3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt='' src={tickup4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
 
                                         </div>
 
@@ -325,24 +345,24 @@ class Landing extends Component {
 
 
                                     <Carousel.Item>
-                                        <div className='col-10' style={{ marginLeft: '80px' , display:"flex",flexDirection:'row'}}>
-                                            <img src={Movafagh} style={{ width: '200px' }}></img>
-                                            <div style={{display:'flex', flexDirection:'column' , paddingLeft:'20px', paddingTop:'80px'}}>
+                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
+                                            <img alt=''  src={Movafagh1} style={{ width: '200px' }}></img>
+                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
                                                 <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
 
                                             </div>
-                                            <img src={Movafagh} style={{ width: '180px', height:'400px', marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={Movafagh} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={Movafagh} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
+                                            <img alt=''  src={Movafagh2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Movafagh3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Movafagh4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
 
                                         </div>
 
@@ -351,46 +371,90 @@ class Landing extends Component {
 
                                     <Carousel.Item>
 
-                                        <div className='col-10' style={{ marginLeft: '80px' , display:"flex",flexDirection:'row'}}>
-                                            <img src={Pentago} style={{ width: '200px' }}></img>
-                                            <div style={{display:'flex', flexDirection:'column' , paddingLeft:'20px', paddingTop:'80px'}}>
+                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
+                                            <img alt=''  src={Pentago1} style={{ width: '200px' }}></img>
+                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
                                                 <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
 
                                             </div>
-                                            <img src={Pentago} style={{ width: '180px', height:'400px', marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={Pentago} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={Pentago} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
+                                            <img alt=''  src={Pentago2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Pentago3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Pentago4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
 
                                         </div>
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                        <div className='col-10' style={{ marginLeft: '80px' , display:"flex",flexDirection:'row'}}>
-                                            <img src={Cookland} style={{ width: '200px' }}></img>
-                                            <div style={{display:'flex', flexDirection:'column' , paddingLeft:'20px', paddingTop:'80px'}}>
+                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
+                                            <img alt=''  src={Cookland1} style={{ width: '200px' }}></img>
+                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
                                                 <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-<h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
 
                                             </div>
-                                            <img src={Cookland} style={{ width: '180px', height:'400px', marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={Cookland} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
-                                            <img src={Cookland} style={{ width: '180px', height:'400px',  marginLeft:'20px' , paddingTop:'30px'}}></img>
+                                            <img alt=''  src={Cookland2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Cookland3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Cookland4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+
+                                        </div>
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
+                                            <img alt=''  src={Woid1} style={{ width: '200px' }}></img>
+                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+
+                                            </div>
+                                            <img alt=''  src={Woid2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Woid3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Woid4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+
+                                        </div>
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
+                                            <img alt=''  src={Rabt1} style={{ width: '200px' }}></img>
+                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+
+                                            </div>
+                                            <img alt='' src={Rabt2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt='' src={Rabt3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <img alt=''  src={Rabt4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
 
                                         </div>
                                     </Carousel.Item>
@@ -398,7 +462,7 @@ class Landing extends Component {
 
                             </div>
 
-                          
+
                         </div>
 
                     </div>
@@ -426,7 +490,7 @@ class Landing extends Component {
                                 <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
                             </div>
                             <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
-                                <img src={Join_right} style={{ width: '80% ' }}></img>
+                                <img alt=''  src={Join_right} style={{ width: '80% ' }}></img>
                             </div>
                         </div>
 
@@ -434,7 +498,7 @@ class Landing extends Component {
                     <div className='col-12' style={{ paddingTop: '50px' }}>
                         <div className='row'>
                             <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
-                                <img src={Join_left} style={{ width: '80% ' }}></img>
+                                <img alt=''  src={Join_left} style={{ width: '80% ' }}></img>
                             </div>
                             <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "left", flexDirection: 'column' }} >
                                 <h2 > {i18n.t('Landing.DTeamtxt')}</h2>
@@ -472,7 +536,7 @@ class Landing extends Component {
 
 
                                 <div className='col-md-4 col-sm-12' style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
-                                    <img src={Call} style={{ width: '25px' }}></img>
+                                    <img alt=''  src={Call} style={{ width: '25px' }}></img>
                                     <div style={{ paddingLeft: '10px', display: 'flex', flexDirection: 'column' }}>
                                         <h7 >{i18n.t('Landing.number1')}</h7>
                                         <h7 >{i18n.t('Landing.number2')}</h7>
@@ -480,20 +544,20 @@ class Landing extends Component {
 
                                 </div>
                                 <div className='col-md-4 col-sm-12' style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
-                                    <img src={Loc} style={{ width: '25px' }}></img>
+                                    <img alt=''  src={Loc} style={{ width: '25px' }}></img>
                                     <div style={{ paddingLeft: '10px', display: 'flex', flexDirection: 'column' }}>
                                         <h7 >{i18n.t('Landing.address1')}</h7>
                                         <h7 >{i18n.t('Landing.address2')}</h7>
                                     </div>
                                 </div>
                                 <div className='col-md-4 col-sm-12' style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
-                                    <img src={Mail} style={{ width: '25px' }}></img>
+                                    <img alt=''  src={Mail} style={{ width: '25px' }}></img>
                                     <h7 style={{ paddingLeft: '10px' }}>{i18n.t('Landing.email')}</h7>
                                 </div>
                             </div>
                             <div className='row'>
                                 <div className='col-12' style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
-                                    <img src={lastpic} style={{ width: '40%', paddingBottom: '30px' }}></img>
+                                    <img alt=''  src={lastpic} style={{ width: '40%', paddingBottom: '30px' }}></img>
                                 </div>
 
                             </div>
