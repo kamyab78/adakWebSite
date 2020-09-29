@@ -79,7 +79,6 @@ class Landing extends Component {
             showAlert: false
         }
     }
-
     closeModal = () => {
         this.setState({
             modalShow: false
@@ -150,7 +149,6 @@ class Landing extends Component {
     }
     render() {
         return (
-
             < div style={{ width: '100%' }}>
                 <Alert show={this.state.showAlert} onClose={this.close} variant="success" style={{ position: 'fixed' }} dismissible>
                     {i18n.t('Landing.SendSuccess')}
@@ -169,16 +167,15 @@ class Landing extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" style={{ paddingLeft: '50px' }}>
                         <Nav className='ml-auto'>
-                            <Nav.Link id='Home' href="#home" style={{ paddingRight: '40px' }}>Home</Nav.Link>
-                            <Nav.Link id='service' href="#features" style={{ paddingRight: '40px' }}>Services</Nav.Link>
-                            <Nav.Link id='por' href="#pricing" style={{ paddingRight: '40px' }}>Portfolio</Nav.Link>
-                            <Nav.Link id='about' href="#pricing" style={{ paddingRight: '40px' }}>About us</Nav.Link>
-                            <Nav.Link id='contact' href="#pricing" style={{ marginRight: '100px', backgroundColor: '#e8505b', borderRadius: '10px', width: '100px', textAlign: 'center' }}>Contact</Nav.Link>
+                            <Nav.Link id='Home'  style={{ paddingRight: '40px' }}>Home</Nav.Link>
+                            <Nav.Link id='service'  style={{ paddingRight: '40px' }}>Services</Nav.Link>
+                            <Nav.Link id='por'  style={{ paddingRight: '40px' }}>Portfolio</Nav.Link>
+                            <Nav.Link id='about'  style={{ paddingRight: '40px' }}>About us</Nav.Link>
+                            <Nav.Link id='contact'  style={{ marginRight: '100px', backgroundColor: '#e8505b', borderRadius: '10px', width: '100px', textAlign: 'center' }}>Contact</Nav.Link>
                         </Nav>
 
                     </Navbar.Collapse>
                 </Navbar>
-
                 <Modal
                     show={this.state.modalShow}
                     onHide={this.closeModal}
@@ -250,10 +247,11 @@ class Landing extends Component {
 
                         <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>{i18n.t('Landing.title')}</h1>
                         <div className='row' style={{ paddingTop: '20px' }}>
-                            <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
+                            <div className='col-lg-2'></div>
+                            <h4 className='col-sm-12 col-lg-8 tech' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "left", fontWeight:'normal' }}>
                                 {i18n.t('Landing.txtHome1')}
-                            </div>
-                            <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                            </h4>
+                            {/* <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                                 {i18n.t('Landing.txtHome2')}
                             </div>
                             <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
@@ -265,6 +263,9 @@ class Landing extends Component {
                             <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                                 {i18n.t('Landing.txtHome5')}
                             </div>
+                            <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                                {i18n.t('Landing.txtHome6')}
+                            </div> */}
                             <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <img alt='' className=' col-s-12' style={{ width: '450px' }} src={HomePhoto}></img>
                             </div>
@@ -275,9 +276,7 @@ class Landing extends Component {
                     <div className='col-12' style={{ paddingTop: '30px' }}>
                         <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>{i18n.t('Landing.servicetitle')}</h1>
                         <div className='row'>
-                            <div className='col-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center", paddingTop: '30px' }}>
-                                dddddkkdkkdkk
-                       </div>
+                      
                             <div>
 
                             </div>
@@ -286,7 +285,7 @@ class Landing extends Component {
                                 <div className='card'  >
                                     <img alt='' src={Ui} style={{ width: '90px', paddingBottom: '40px' }}></img>
                                     <h6>   {i18n.t('Landing.uitext')}</h6>
-                                    <h7 style={{ fontSize: '13px' }}>ddddddd</h7>
+                                    <h7 style={{ fontSize: '13px' }}>{i18n.t('Landing.uitextex')}</h7>
                                 </div>
 
                             </div>
@@ -294,14 +293,14 @@ class Landing extends Component {
                                 <div className='card'  >
                                     <img alt='' src={Phone} style={{ width: '90px', paddingBottom: '40px' }}></img>
                                     <h6>   {i18n.t('Landing.apptext')}</h6>
-                                    <h7 style={{ fontSize: '13px' }}>ddddddd</h7>
+                                    <h7 style={{ fontSize: '13px' }}>{i18n.t('Landing.apptextex')}</h7>
                                 </div></div>
                             <div className='col-sm-12 col-md-3' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center", paddingTop: '30px' }}>
 
                                 <div className='card'  >
                                     <img alt='' src={Web} style={{ width: '90px', paddingBottom: '40px' }}></img>
                                     <h6>   {i18n.t('Landing.webtext')}</h6>
-                                    <h7 style={{ fontSize: '13px' }}>ddddddd</h7>
+                                    <h7 style={{ fontSize: '13px' }}> {i18n.t('Landing.webtextex')}</h7>
                                 </div>
                             </div>
                             <div className='col-md-2'></div>
@@ -320,24 +319,35 @@ class Landing extends Component {
                                 <Carousel indicators={false} interval='3000' style={{ paddingTop: '10px', height: '100px', color: 'black' }}>
                                     <Carousel.Item>
 
-                                        <div className='col-12' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
-                                            <img alt='' src={tickup1} style={{ width: '200px' }}></img>
-                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                        <div className='col-12 main_col' >
+                                           
+<div className='col-1'>
 
+</div>
+                                                    <div className='col-lg-2 col-md-4 changepossition' >
+  <img alt='' src={tickup1} style={{ width: '200px' }}></img>
                                             </div>
-                                            <img alt='' src={tickup2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt='' src={tickup3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt='' src={tickup4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
+                                            <div className='col-lg-3  showtxt  '>
+                                                       <div style={{ display: 'flex', flexDirection: 'column', paddingTop:'40px'}}>
+                                                <h7 className='fonttxt'>{i18n.t('Landing.tikuptxt1')}</h7>
+                                            </div>
+                                                </div>
+                                                <div className='col-2 showdiv '>
+                                                            <img alt='' src={tickup2} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                </div>
+                                                <div className='col-2 showdiv'>
+                                                   <img alt='' src={tickup3} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                </div>
+                                                <div className='col-1 showdiv'>
+                                                 <img alt='' src={tickup4} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                </div>
+                                     
+                                        
+                                          
+                                     
+                                
+                                         
+                                           
 
                                         </div>
 
@@ -345,118 +355,143 @@ class Landing extends Component {
 
 
                                     <Carousel.Item>
-                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
-                                            <img alt=''  src={Movafagh1} style={{ width: '200px' }}></img>
-                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-
-                                            </div>
-                                            <img alt=''  src={Movafagh2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Movafagh3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Movafagh4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-
-                                        </div>
+                                    <div className='col-12 main_col' >
+                                           
+                                           <div className='col-1'>
+                                           
+                                           </div>
+                                                                                               <div className='col-lg-2 col-md-4 changepossition'>
+                                                                                               <img alt=''  src={Movafagh1} style={{ width: '200px' }}></img>
+                                                                                       </div>
+                                                                                       <div className='col-lg-3  showtxt '>
+                                                                                                  <div style={{ display: 'flex', flexDirection: 'column', paddingTop:'40px'}}>
+                                                                                           <h7 className='fonttxt'>{i18n.t('Landing.movafaghaittxt')}</h7>
+                                                                             
+                                                                                       </div>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv '>
+                                                                                           <img alt=''  src={Movafagh2} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv'>
+                                                                                           <img alt=''  src={Movafagh3} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-1 showdiv'>
+                                                                                           <img alt=''  src={Movafagh4} style={{ width: '180px', height: '400px' , paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                   </div>
+      
 
                                     </Carousel.Item>
 
 
                                     <Carousel.Item>
-
-                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
-                                            <img alt=''  src={Pentago1} style={{ width: '200px' }}></img>
-                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-
-                                            </div>
-                                            <img alt=''  src={Pentago2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Pentago3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Pentago4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-
-                                        </div>
+                                    <div className='col-12 main_col'  >
+                                           
+                                           <div className='col-1'>
+                                           
+                                           </div>
+                                                                                               <div className='col-lg-2 col-md-4 changepossition'>
+                                                                                               <img alt=''  src={Pentago1} style={{ width: '200px' }}></img>
+                                                                                       </div>
+                                                                                       <div className='col-lg-3  showtxt '>
+                                                                                                  <div style={{ display: 'flex', flexDirection: 'column', paddingTop:'40px'}}>
+                                                                                           <h7 className='fonttxt'>{i18n.t('Landing.pentagotxt')}</h7>
+                                                                             
+                                                                                       </div>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv '>
+                                                                                           <img alt=''  src={Pentago2} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv'>
+                                                                                           <img alt=''  src={Pentago3} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-1 showdiv'>
+                                                                                           <img alt=''  src={Pentago4} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                   </div>
+         
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
-                                            <img alt=''  src={Cookland1} style={{ width: '200px' }}></img>
-                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
+                                    <div className='col-12 main_col'  >
+                                           
+                                           <div className='col-1'>
+                                           
+                                           </div>
+                                                                                               <div className='col-lg-2 col-md-4 changepossition'>
+                                                                                               <img alt=''  src={Cookland1} style={{ width: '200px' }}></img>
+                                                                                       </div>
+                                                                                       <div className='col-lg-3  showtxt '>
+                                                                                                  <div style={{ display: 'flex', flexDirection: 'column', paddingTop:'40px'}}>
+                                                                                           <h7 className='fonttxt'>{i18n.t('Landing.cooklandtxt')}</h7>
+                                                                             
+                                                                                       </div>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv '>
+                                                                                           <img alt=''  src={Cookland2} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv'>
+                                                                                           <img alt=''  src={Cookland3} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-1 showdiv'>
+                                                                                           <img alt=''  src={Cookland4} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                   </div>
 
-                                            </div>
-                                            <img alt=''  src={Cookland2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Cookland3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Cookland4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-
-                                        </div>
+                             
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
-                                            <img alt=''  src={Woid1} style={{ width: '200px' }}></img>
-                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-
-                                            </div>
-                                            <img alt=''  src={Woid2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Woid3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Woid4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-
-                                        </div>
+                                    <div className='col-12 main_col' >
+                                           
+                                           <div className='col-1'>
+                                           
+                                           </div>
+                                                                                               <div className='col-lg-2 col-md-4 changepossition'>
+                                                                                               <img alt=''  src={Woid1} style={{ width: '200px' }}></img>
+                                                                                       </div>
+                                                                                       <div className='col-lg-3  showtxt '>
+                                                                                                  <div style={{ display: 'flex', flexDirection: 'column', paddingTop:'40px'}}>
+                                                                                           <h7 className='fonttxt'>{i18n.t('Landing.woidxt')}</h7>
+                                                                             
+                                                                                       </div>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv '>
+                                                                                           <img alt=''  src={Woid2} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv'>
+                                                                                           <img alt=''  src={Woid3} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-1 showdiv'>
+                                                                                           <img alt=''  src={Woid4} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                   </div>
+                          
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                        <div className='col-10' style={{ marginLeft: '80px', display: "flex", flexDirection: 'row' }}>
-                                            <img alt=''  src={Rabt1} style={{ width: '200px' }}></img>
-                                            <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '20px', paddingTop: '80px' }}>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-                                                <h7>bjkkkkkkkkkkkbnjjkbjkkjnbjknjknkjnj</h7>
-
-                                            </div>
-                                            <img alt='' src={Rabt2} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt='' src={Rabt3} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-                                            <img alt=''  src={Rabt4} style={{ width: '180px', height: '400px', marginLeft: '20px', paddingTop: '30px' }}></img>
-
-                                        </div>
+                                    <div className='col-12 main_col' >
+                                           
+                                           <div className='col-1'>
+                                           
+                                           </div>
+                                                                                               <div className='col-lg-2 col-md-4 changepossition'>
+                                                                                               <img alt=''  src={Rabt1} style={{ width: '200px' }}></img>
+                                                                                       </div>
+                                                                                       <div className='col-lg-3  showtxt '>
+                                                                                                  <div style={{ display: 'flex', flexDirection: 'column', paddingTop:'40px'}}>
+                                                                                           <h7 className='fonttxt'>{i18n.t('Landing.rabtxt')}</h7>
+                                                                             
+                                                                                       </div>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv '>
+                                                                                           <img alt='' src={Rabt2} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-2 showdiv'>
+                                                                                           <img alt='' src={Rabt3} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                           <div className='col-1 showdiv'>
+                                                                                           <img alt=''  src={Rabt4} style={{ width: '180px', height: '400px', paddingTop: '30px' }}></img>
+                                                                                           </div>
+                                                                                   </div>
+        
                                     </Carousel.Item>
                                 </Carousel>
 
@@ -468,51 +503,34 @@ class Landing extends Component {
                     </div>
 
                 </div>
-
-
-                <div id='about_page' className='row' style={{ paddingTop: '390px' }}>
+                <div id='about_page' className='row topPad' >
                     <div className='col-12'>
                         <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>{i18n.t('Landing.about')}</h1>
                     </div>
                     <div className='col-12' >
                         <div className='row'>
-                            <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "left", flexDirection: 'column' }} >
+                            <div className='col-md-6 col-sm-12 tech ' style={{ display: 'flex', justifyContent: 'center', alignItems: 'start', textAlign: "left", flexDirection: 'column' }} >
                                 <h2 > {i18n.t('Landing.Teamtxt')}</h2>
-                                <div >dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
+                                <h7>{i18n.t('Landing.txt1')}</h7>
+                                <h7>{i18n.t('Landing.txt2')}</h7>
+                                <h7>{i18n.t('Landing.txt3')}</h7>
+                               
                             </div>
-                            <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
+                            <div className='col-md-6 col-sm-12 ' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
                                 <img alt=''  src={Join_right} style={{ width: '80% ' }}></img>
                             </div>
                         </div>
 
                     </div>
                     <div className='col-12' style={{ paddingTop: '50px' }}>
-                        <div className='row'>
+                        <div className='row change_row' >
                             <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
                                 <img alt=''  src={Join_left} style={{ width: '80% ' }}></img>
                             </div>
-                            <div className='col-md-6 col-sm-12' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "left", flexDirection: 'column' }} >
+                            <div className='col-md-6 col-sm-12 paddingLeft' style={{ display: 'flex', justifyContent: 'center', alignItems: 'start', textAlign: "left", flexDirection: 'column' }} >
                                 <h2 > {i18n.t('Landing.DTeamtxt')}</h2>
-                                <div >dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <div>dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-                                <div>fffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-                                <Button id='join' style={{ backgroundColor: '#e8505b', width: '130px', borderRadius: '10px', borderColor: 'transparent', fontSize: '15px' }}>{i18n.t('Landing.Join')}</Button>
+                                <h7>{i18n.t('Landing.txt4')}</h7>
+                                {/* <Button id='join' style={{ backgroundColor: '#e8505b', width: '130px', borderRadius: '10px', borderColor: 'transparent', fontSize: '15px' }}>{i18n.t('Landing.Join')}</Button> */}
                             </div>
 
                         </div>
@@ -526,11 +544,11 @@ class Landing extends Component {
                             <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>{i18n.t('Landing.contact')}</h1>
                         </div>
                         <div className='col-12' style={{ paddingTop: '30px' }}>
-                            <h6 style={{ textAlign: 'center' }}>dskkkkkkknsdsdfsdffnlskdfnksndfklnsdlkfnslkdfnsdlfknsldfn</h6>
+                            <h6 style={{ textAlign: 'center' }}>{i18n.t('Landing.join')}</h6>
                         </div>
-                        <div className='col-12' style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
+                        {/* <div className='col-12' style={{ paddingTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: "center" }}>
                             <Button onClick={this.show} style={{ width: '200px', borderRadius: '10px', fontSize: '15px', backgroundColor: 'transparent', color: 'black', borderColor: 'rgb(0,0,0,0.5)' }}>{i18n.t('Landing.sendResume')}</Button>
-                        </div>
+                        </div> */}
                         <div className='col-12' >
                             <div className='row'>
 
@@ -565,8 +583,6 @@ class Landing extends Component {
                     </div>
                 </div>
             </div>
-
-
         )
     }
 }
