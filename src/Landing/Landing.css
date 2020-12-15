@@ -125,7 +125,7 @@ visibility: hidden;
     border-radius:10px;
     border:5px dashed transparent;
     color:transparent;
-   background-image: url('../photo/add.png');
+ 
    background-size: 100px;
    background-position: center;
    background-repeat: no-repeat;
@@ -145,7 +145,7 @@ z-index: 2;
     border-radius:10px;
     border:5px dashed rgb(128, 128, 128,0.4);
     color:black;
-   background-image: url('../photo/add.png');
+
    background-size: 100px;
    background-position: center;
    background-repeat: no-repeat;
