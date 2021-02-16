@@ -39,6 +39,7 @@ import Call from '../photo/phone1.png'
 import Mail from '../photo/mail.png'
 import Loc from '../photo/location.png'
 import lastpic from '../photo/04.png'
+
 class Landing extends Component {
     componentDidMount() {
         $(document).ready(function () {
@@ -150,6 +151,12 @@ class Landing extends Component {
     render() {
         return (
             < div style={{ width: '100%' }}>
+                <div className='ad'   data-animate-in="fadeIn">  
+          
+                <img style={{width:'50px'}} src={Movafagh1}></img>
+                <h6>fdderreeeeeeeeeeeeeeeeeee</h6>
+
+                </div>
                 <Alert show={this.state.showAlert} onClose={this.close} variant="success" style={{ position: 'fixed' }} dismissible>
                     {i18n.t('Landing.SendSuccess')}
                 </Alert>
